@@ -1,4 +1,3 @@
-
 unit_info = {
     "probe": {
         "name" : "프로브",
@@ -35,10 +34,7 @@ class Unit:
         self.shield = shield
         self.demage = demage
     
-        
-
-class Player:
-    
+class Player: 
     def __init__(self, nickname, mineral, gas, unitlist = []):
         self.nickname = nickname
         self.mineral = mineral
