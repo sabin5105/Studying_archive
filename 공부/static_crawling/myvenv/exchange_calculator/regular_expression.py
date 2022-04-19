@@ -16,3 +16,8 @@ s = '이 영화는 A등급 입니다'
 print(re.match(r'이 영화는 [ABCF]등급 입니다', s))
 print(s.split('이 영화는 ')[1].split('등급')[0])
 print(re.findall(r'이 (..)는 ([ABCD])등급 입니다', s))
+
+# 정규식 함수
+# match
+# search
+# findall

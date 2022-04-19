@@ -23,5 +23,4 @@ print()
 usd = float(captures[0][1].replace(",", ""))
 won = int(input("달러로 바꾸길 원하는 금액(원)을 입력하세요 : "))
 dollar = won / usd
-dollar = int(dollar)
 print(f"{dollar} 달러 환전 되었습니다")
