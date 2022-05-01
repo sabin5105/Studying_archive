@@ -1,0 +1,31 @@
+File location : ./dataset/gmv_trend.csv
+------WHERE------
+--1--
+select *
+from gmv_trend_csv gtc
+where yyyy >= 2019
+--2--
+select *
+from gmv_trend_csv gtc
+where yyyy between 2018 and 2019
+--3--
+select *
+from gmv_trend_csv gtc
+where yyyy != 2019
+--4--
+select *
+from gmv_trend_csv gtc
+where category = '컴퓨터 및 주변기기'
+--5--
+select *
+from gmv_trend_csv gtc
+where category not in ('컴퓨터 및 주변기기', '생활용품')
+--6--
+select *
+from gmv_trend_csv gtc
+where category like '%패션' or like '패션%' or like '%패션%'	---앞에 글자 | 뒤에 글자 | 앞뒤로 글자
+--7--
+select *
+from gmv_trend_csv gtc
+where category = '컴퓨터 및 주변기기'
+and yyyy = 2021;

@@ -1,0 +1,19 @@
+File location : ./dataset/gmv_trend.csv
+
+------GROUP BY------
+--select에 없는 column을 group by 하려고 하면 안됨
+--select에 있는 모든 column (function 제외)를 group by
+--1--
+select category, yyyy, sum(gmv) as gmv
+from gmv_trend_csv gtc
+group by category, yyyy;
+--2--
+select category, yyyy, sum(gmv) as gmv
+from gmv_trend_csv gtc
+group by 1,2;
+
+--집계함수 종류--
+sum
+min
+max
+avg

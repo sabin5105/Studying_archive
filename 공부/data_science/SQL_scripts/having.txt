@@ -1,0 +1,13 @@
+File location : ./dataset/gmv_trend.csv
+
+*** 
+WHERE : "집계 전 데이터 필터링" -> 집계함수 X
+HAVING : "집계 후 데이터 필터링" -> 집계함수 O
+***
+------HAVING------
+--1--
+select category, sum(gmv) as gmv
+from gmv_trend
+where yyyy = 2020
+group by 1
+having sum(gmv) >= 1000000

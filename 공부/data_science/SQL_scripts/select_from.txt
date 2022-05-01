@@ -1,0 +1,17 @@
+File location : ./dataset/gmv_trend.csv
+
+***
+컬럼명을 새로 명명할 경우: 띄어쓰기, 숫자로 시작하는 단어, 특수문자가 포함된 단어는 올 수 없다.
+e.g.) acte gory, 2021_gmv, ##21
+***
+
+------SELECT FROM------
+--1--
+select *
+from gmv_trend_csv gtc
+--2--
+select category, yyyy, mm, platfrom_type, gmv
+from gmv_trend_csv gtc
+--3--
+select distinct yyyy
+from gmv_trend_csv gtc

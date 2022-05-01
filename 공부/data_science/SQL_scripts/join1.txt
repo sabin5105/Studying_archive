@@ -1,0 +1,49 @@
+*** 
+2개 이상의 테이블을 참조
+***
+------JOIN------
+--1--
+select item_name , sum(gmv) as gmv
+from online_order as oo
+join item as i on oo.itemid = i.id
+group by 1
+order by 2 desc
+"
+online_order 테이블 , item 테이블 참조
+online_order의 itemid column의 data 중 item의 id column의 data와 같은 것을
+item_name으로 묶어서
+sum(gmv) 내림차순으로 정렬
+"
+--2--
+select c.cate1, c.cate2, c.cate3, sum(gmv) as gmv
+from online_order oo
+join item i on oo.itemid = i.id
+join category c on i.category_id = c.id
+group by 1,2,3
+order by 4 desc
+"
+category 의 cate1, cate2, cate3 선택 online_order의 sum(gmv)
+item - online_order가 join, category - item가 join
+oo.itemid = i.id 인 것들 중,
+i.category_id = c.id
+
+online_order의 값을 category와 연결하고 싶은데
+연결 고리가 없으니까
+item을 거쳐서
+joind을 두번 한 것이다
+"
+--3--
+select ui.gender , ui.age_band , sum(gmv) as gmv
+from online_order oo
+join user_info ui on oo.userid = ui.userid
+group by 1, 2
+order by 1, 2
+
+--4--
+select item_name, sum(gmv) as gmv
+from online_order oo
+join item i on oo.itemid = i.id
+join user_info ui on oo.userid = ui.userid
+where gender = 'M'
+group by 1
+group by 2 desc
