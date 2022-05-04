@@ -1,0 +1,18 @@
+css selector 고급한정자 예시
+
+- :enabled
+-> document.querySelector("input:enabled")
+- :checked
+- :disabled
+- :empty
+- :first-child
+- :last-child
+- :first-of-type
+- :last-of-type
+- :hover
+- :not
+-> document.querySelector("div:not(:fist-child)")
+- :nth-child
+-> document.querySelector("div:nth-child(3)")
+- :nth-of-type
+

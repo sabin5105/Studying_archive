@@ -1,6 +1,8 @@
 * pip3 install django in virtualenv
+
 * python3 manage.py runserver
     - activate django server
     - 127.0.0.1:8000 -> local django server activated
     - control + c = exit
+    
 * python3 manage.py startapp shortener

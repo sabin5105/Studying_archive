@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./myvenv/startcoding",
+        "./code_lion/myvenv/datalab_naver"
+    ]
+}
