@@ -6,3 +6,8 @@
     - control + c = exit
     
 * python3 manage.py startapp shortener
+
+models.py : data modeling
+views.py : urls.py와 연동하여 view 관리
+
+Bootstrap : template samples
