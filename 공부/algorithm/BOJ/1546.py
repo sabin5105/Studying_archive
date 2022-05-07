@@ -7,3 +7,4 @@ for number in numbers:
     new_numbers.append(number/MAX*100)
 
 print(sum(new_numbers)/n)
+
