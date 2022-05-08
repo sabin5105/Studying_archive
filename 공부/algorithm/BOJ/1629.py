@@ -1,19 +1,18 @@
 import sys
 
-n = sys.stdin.readline().split() # a = list
-a = int(n[0])
-b = int(n[1])
-c = int(n[2])
+a,b,c = map(int,sys.stdin.readline().split()) # a = list
+# 10 11 12
 
-def check_odd(n):
-    if n%2 == 0:
-        return True
-    return False
+def mul(a,b):
+    if b==1:
+        return a%c
+    else:
+        temp = mul(a,b//2)
+        if b % 2 == 0:
+            # 짝수
+            return (temp * temp) % c
+        else:
+            # 홀수
+            return (temp * temp * a) % c
 
-
-if check_odd(b):
-    # 짝수
-    print((pow(a,b/2) * pow(a,b/2))%c)
-else:
-    # 홀수
-    print((pow(a,(b-1)/2) * pow(a,(b-1)/2) * a)%c)
+print(mul(a,b))
