@@ -1,0 +1,4 @@
+Where col1 in('con1,con2')
+ : where col1 = 'con1' or col1 = 'con2'
+
+Limit

@@ -1,0 +1,50 @@
+하나의 select 문장에서 포함된 또 하나의 select 문장
+
+----------------------------------------------------------------------------------------------
+
+SELECT column2
+  FROM t_table
+ WHERE column1 = (SELECT문)
+
+* 서브 쿼리에서는 group by having 을 사용할 수 없음
+
+----------------------------------------------------------------------------------------------
+단일 행 서브 쿼리 (Single-Row Subquery)
+
+SELECT address
+  FROM t_table
+ WHERE phone = (SELECT phone
+                  FROM t_member
+                 WHERE name = "홍길동");
+----------------------------------------------------------------------------------------------
+다중 행 서브 쿼리 (Multi-Row Subquery)
+IN
+ : 서브 쿼리로 조회되는 column1의 값들 중에서 column1의 값이 하나라도 존재하면 참이 되어 조회
+ : ANY 와 SOME의 사용 결과 일치
+
+SELECT column1, column2
+  FROM t_table
+ WHERE column1 IN (SELECT column1 FROM t_table WHERE column2 > 500);
+
+ALL
+ : 서브 쿼리로 조회되는 column_name의 값들과 column_name의 값이 모두 존재해야 참이되어 조회
+
+SELECT column_name
+FROM table_name
+WHERE column_name ALL (SELECT column_name FROM table_name WHERE condition);
+
+EXIST
+ : 테이블에서 서브 쿼리의 값과 같은 행이 존재한다면 조회
+
+SELECT column_name
+ FROM table_name
+WHERE EXISTS (SELECT column_name FROM table_name WHERE condition);
+----------------------------------------------------------------------------------------------
+인라인 뷰
+ : FROM 절에 사용하는 서브 쿼리
+ : alias 가능
+
+SELECT A.address
+  FROM (SELECT phone
+                  FROM t_member
+                 WHERE name = "홍길동") A;

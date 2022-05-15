@@ -1,0 +1,11 @@
+Left
+Select left("2018101246",4)
+-> 2018
+
+Right
+Select right("2018101246",4)
+->1246
+
+Substr
+Select substr("2018101246",1,4)
+2018
