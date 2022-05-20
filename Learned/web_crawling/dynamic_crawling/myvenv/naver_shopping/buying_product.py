@@ -7,7 +7,7 @@ import time
 import os
 import pyperclip
 
-chrome = webdriver.Chrome("./chromedriver")
+chrome = webdriver.Chrome("./Users/sabin/Desktop/Learned/web_crawling/dynamic_crawling/myvenv/chromedriver")
 wait = WebDriverWait(chrome, 10)
 short_wait = WebDriverWait(chrome, 3)
 
