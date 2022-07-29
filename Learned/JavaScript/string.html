@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Methods</title>
+</head>
+<body>
+    <h1>String Methods</h1>
+    <p>
+        <p id="length"></p>
+        <p id="slice"></p>
+        <p id="subslice"></p>
+        <p id="replace"></p>
+        <p id="global match replace"></p>
+        <p id="to upper case"></p>
+        <p id="concat"></p>
+        <p id="trim"></p>
+        <p id="padding"></p>
+        <p id="charAt"></p>
+        <p id="split"></p>
+        <p id="last index of"></p>
+        <p id="index of"></p>
+        <p id="search"></p>
+        <p id="match"></p>
+        <p id="include"></p>
+        <p id="starts with"></p>
+    </p>
+
+    <script>
+        let str = "Hello World World";
+        document.getElementById("length").innerHTML = "Length of \"Hello World\" : " + str.length;
+        document.getElementById("slice").innerHTML = "Slice of \"Hello World\" : " + str.slice(0, 5);
+        document.getElementById("subslice").innerHTML = "substr of \"Hello World\" : " + str.substr(0, 2);
+        document.getElementById("replace").innerHTML = "Replace of \"Hello World\" : " + str.replace("World", "Universe"); 
+        document.getElementById("global match replace").innerHTML = "Global match replace of \"Hello World\" : " + str.replace(/WORLD/ig, "Universe");
+        document.getElementById("to upper case").innerHTML = "To upper case of \"Hello World\" : " + str.toUpperCase();
+        document.getElementById("concat").innerHTML = "Concat of \"Hello World\" : " + str.concat(" Universe");
+        document.getElementById("trim").innerHTML = "Trim of \"Hello World\" : " + str.trim();
+        document.getElementById("padding").innerHTML = "Padding of \"Hello World\" : " + str.padStart(20, "*");
+        document.getElementById("charAt").innerHTML = "Char at of \"Hello World\" : " + str.charAt(0);
+        document.getElementById("split").innerHTML = "Split of \"Hello World\" : " + str.split(" ");
+        document.getElementById("last index of").innerHTML = "Last index of 'World' in \"Hello World\" : " + str.lastIndexOf("World");
+        document.getElementById("index of").innerHTML = "Index of 'World' in \"Hello World\" : " + str.indexOf("World");
+        document.getElementById("search").innerHTML = "Search of 'World' in \"Hello World\" : " + str.search("World");
+        document.getElementById("match").innerHTML = "Match of 'World' in \"Hello World\" : " + str.match(/Wor/gi);
+        document.getElementById("include").innerHTML = "Include of 'World' in \"Hello World\" : " + str.includes("World");
+        document.getElementById("starts with").innerHTML = "Starts with 'World' in \"Hello World\" : " + str.startsWith("World",0);
+    </script>
+</body>
+</html>
