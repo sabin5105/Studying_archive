@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Array</title>
+</head>
+<body>
+    <h1>Array</h1>
+    <p>
+        <p id="before change array elements"></p>
+        <p id="after change array elements"></p>
+        <p id="forEach">After forEach : </p>
+        <p id="map"></p>
+        <p id="filter"></p>
+        <p id="reduce"></p>
+        <p id="find"></p>
+        <p id="indexOf"></p>
+        <p id="lastIndexOf"></p>
+        <p id="findIndex"></p>
+        <p id="includes"></p>
+        <p id="from"></p>
+        <p id="of"></p>
+        <p id="Keys">After Keys : </p>
+        <p id="Entries">After Entries : </p>
+        <p id="push"></p>
+        <p id="pop"></p>
+        <p id="join"></p>
+        <p id="reverse"></p>
+        <p id="shift"></p>
+        <p id="unshift"></p>
+        <p id="slice"></p>
+        <p id="splice"></p>
+        <p id="concat"></p>
+        <p id="sort"></p>
+        <p id="sort numbers"></p>
+        <p id="sort reverse numbers"></p>
+        <p id="sort alphabetically"></p>
+        <p id="sort reverse alphabetically"></p>
+        <p id="sort randomly"></p>
+        <p id="find max"></p>
+        <p id="find min"></p>
+        <p id="object sort"></p>
+
+    
+
+    </p>
+
+    <script>
+        let cars = ["Saab", "Volvo", "BMW"];
+
+        document.getElementById("before change array elements").innerHTML = "before Change array elements : " + cars;
+        cars[0] = 'Hyundai';
+        cars[cars.length] = 'Toyota';
+        document.getElementById("after change array elements").innerHTML = "after Change array elements : " + cars;
+
+        // forEach == for loop, similar to map function
+        cars.forEach(function(car) {
+            document.getElementById("forEach").innerHTML += "* " + car + " *";
+        });
+
+        function myfliter(value, index, array){
+            return value.length > 5;
+        }
+        length_over_3 = cars.filter(myfliter);
+        document.getElementById("filter").innerHTML = "After filter function : " + length_over_3;
+
+        random_numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        function myreduce(total, value, index, array){
+            return total + value; 
+        }
+        reduced_random_numbers = random_numbers.reduce(myreduce);
+        document.getElementById("reduce").innerHTML = "After reduce function : " + reduced_random_numbers;
+
+        function myfind(value, index, array){
+            return value == 'BMW';
+        }
+        find_BMW = cars.find(myfind);
+        document.getElementById("find").innerHTML = "After find function : " + find_BMW;
+
+        index_of_BMW = cars.indexOf("BMW");
+        document.getElementById("indexOf").innerHTML = "After indexOf function : " + index_of_BMW;
+
+        last_index_of_BMW = cars.lastIndexOf("BMW");
+        document.getElementById("lastIndexOf").innerHTML = "After lastIndexOf function : " + last_index_of_BMW;
+
+        function myfindIndex(value, index, array){
+            return value == 'BMW';
+        }
+        find_index_of_BMW = cars.findIndex(myfindIndex);
+        document.getElementById("findIndex").innerHTML = "After findIndex function : " + find_index_of_BMW;
+
+        includes_BMW = cars.includes('BMW');
+        document.getElementById("includes").innerHTML = "After includes function : " + includes_BMW;
+
+        from_name = Array.from("sabin");
+        document.getElementById("from").innerHTML = "After from function : " + from_name;
+
+        of_name = Array.of("sabin");
+        document.getElementById("of").innerHTML = "After of function : " + of_name;
+
+        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+        const keys = fruits.keys();
+
+        for (let x of keys) {
+            document.getElementById("Keys").innerHTML += x + " ";
+        }
+
+        const entries = fruits.entries();
+        for (let x of entries) {
+            document.getElementById("Entries").innerHTML += x + " ";
+        }
+
+        cars.push('Honda');
+        document.getElementById("push").innerHTML = "After push : " + cars;
+
+        cars.pop();
+        document.getElementById("pop").innerHTML = "After pop : " + cars;
+        
+        cars.join("-")
+        document.getElementById("join").innerHTML = "After join : " + cars.join("-");
+
+        cars.reverse();
+        document.getElementById("reverse").innerHTML = "After reverse : " + cars;
+
+        cars.shift();
+        document.getElementById("shift").innerHTML = "After shift : " + cars;
+
+        cars.unshift('Honda');
+        document.getElementById("unshift").innerHTML = "After unshift : " + cars;
+        
+        cars.slice(1,2);
+        document.getElementById("slice").innerHTML = "After slice : " + cars.slice(1,2);
+
+        cars.splice(1,1);
+        document.getElementById("splice").innerHTML += "After splice : " + cars;
+
+        cars.concat(['Kia', 'Toyota']);
+        document.getElementById("concat").innerHTML = "After concat : " + cars.concat(['Kia', 'Toyota']);
+
+        cars = cars.sort();
+        document.getElementById("sort").innerHTML = "After sort : " + cars;
+
+        let numbers = [2,4,6,1,2,3,4];
+        numbers.sort()
+        document.getElementById("sort numbers").innerHTML = "After sort numbers : " + numbers;
+
+        numbers.sort(function(a,b){
+            return b - a;
+        });
+        document.getElementById("sort reverse numbers").innerHTML = "After sort reverse numbers : " + numbers;
+
+        let names = ['John', 'Jane', 'Mary', 'Peter', 'Sebastian'];
+        names.sort();
+        document.getElementById("sort alphabetically").innerHTML = "After sort alphabetically : " + names;
+
+        names.reverse();
+        document.getElementById("sort reverse alphabetically").innerHTML = "After sort reverse alphabetically : " + names;
+
+        names.sort(function(a,b){
+            return Math.random() - 0.5;
+        })
+        document.getElementById("sort randomly").innerHTML = "After sort randomly : " + names;
+    
+        Math.max.apply(null, numbers);
+        document.getElementById("find max").innerHTML = "find max : " + Math.max.apply(null, numbers);
+
+        Math.min.apply(null, numbers);
+        document.getElementById("find min").innerHTML = "find min : " + Math.min.apply(null, numbers);
+
+        let cars2 = [{name: 'Saab', year: 1999}, {name: 'Volvo', year: 2005}, {name: 'BMW', year: 2013}];
+        cars2.sort(function(a,b){return a.year-b.year});
+        document.getElementById("object sort").innerHTML = "After object sort : ";
+        for (let i = 0; i < cars2.length; i++) {
+            document.getElementById("object sort").innerHTML += cars2[i].name + " " + cars2[i].year + " / ";
+        }
+
+    </script>
+</body>
+</html>
