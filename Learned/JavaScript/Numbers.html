@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number</title>
+</head>
+<body>
+    <h1>Number</h1>
+    <p>
+        <p id="toPrecision"></p>
+        <p id="valueOf"></p>
+        <p id="string to Number"></p>
+    </p>
+
+    <script>
+        let num = 10.234;
+        document.getElementById("toPrecision").innerHTML = "To precision of 123456789 : " + num.toPrecision();
+        document.getElementById("toPrecision").innerHTML = "To precision of 123456789 : " + num.toPrecision(3);
+        document.getElementById("valueOf").innerHTML = "Value of (100 + 23) : " + (100 + 23).valueOf() + "<br>" + "typeof (100 + 23) : " + typeof (100 + 23).valueOf();
+        document.getElementById("string to Number").innerHTML = "String to Number of \"123\" : " + parseInt("123"); // Number(), parseInt(), parseFloat()
+
+    </script>
+</body>
+</html>
