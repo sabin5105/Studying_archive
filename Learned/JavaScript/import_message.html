@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p></p>
+<input id="demo" type="text">
+<button type="button" onclick="myFunction()">Test click</button>
+<p id="p01"></p>
+
+<script type = "module">
+import message from './export_message.js';
+document.getElementById("p01").innerHTML = message();
+
+</script>
+
+</body>
+</html>
