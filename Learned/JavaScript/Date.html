@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date</title>
+    </head>
+    <body>
+        <h1>Date</h1>
+        <p id="New Date"></p>
+        <p id="New Date with arg"></p>
+        <p id="New Date ISO"></p>
+        <p id="New Date with getTime"></p>
+        <p id="New Date with now"></p>
+        <p id="New Date with UTC"></p>
+        <p id="Set Date"></p>
+        <script>
+            document.getElementById("New Date").innerHTML = "New Date : " + new Date();
+            document.getElementById("New Date with arg").innerHTML = "New Date with arg : " + new Date(year = 2020, month = 2, day = 15);
+            document.getElementById("New Date ISO").innerHTML = "New Date ISO : " + new Date("2020-2-15"); // or 2020-feb-15, this is different count way with normal date function
+
+            const d = new Date();
+            document.getElementById("New Date with getTime").innerHTML = "New Date with getTime : " + d.getTime();
+            document.getElementById("New Date with now").innerHTML = "New Date with now : " + Date.now();
+            
+            document.getElementById("New Date with UTC").innerHTML = "New Date with UTC : " + new Date(Date.UTC(2020, 2, 15));
+            document.getElementById("Set Date").innerHTML = "Set Date : " + d.setDate(15,1,1);
+
+        </script>
+</html>
