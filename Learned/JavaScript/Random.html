@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random</title>
+</head>
+<body>
+    <h1>Random</h1>
+    <p id="random0to9"></p>
+    <p id="random0to10"></p>
+    <p id="random0to99"></p>
+    <p id="random2to10"></p>
+    <script>
+        document.getElementById("random0to9").innerHTML = "random09 with random() : " + Math.floor(Math.random() * 10);
+        document.getElementById("random0to10").innerHTML = "random010 with random() : " + Math.floor(Math.random() * 11);
+        document.getElementById("random0to99").innerHTML = "random099 with random() : " + Math.floor(Math.random() * 100);
+        document.getElementById("random2to10").innerHTML = "random2to10 with random() : " + Math.floor(Math.random() * (10 - 2) + 2);
+    </script>
+</body>
+</html>
