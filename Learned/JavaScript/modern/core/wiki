@@ -1,0 +1,68 @@
+### This wiki follows [javascript.info](https://javascript.info/) basically
+
+So I will not gonna some shXX as ctrl+c,v the documents
+### 👨🏻‍💻Personal notes👨🏻‍💻
+
+<hr>
+
+# **Hello, world!**
+## **\<script\>**
+the script should be like this in HTML file
+```HTML
+<script>console.log("Hello, world!");</script>
+```
+it could be placed anywhere
+
+<br>
+<hr>
+<br>
+
+## **external scripts**
+```HTML 
+<script src="/PATH/myscripts.js"></script>
+```
+the benefit of a separate file is that the browser will download it and store it in its **_cache_** which reduces traffic and makes pages faster
+
+* if src is set, the script content is ignored
+```HTML
+<script src="/PATH/myscripts.js">
+console.log("hello, world!"); // the content is ignored
+</script>
+```
+
+<br>
+<hr>
+<br>
+
+## **Summary**
+* The type <span style='color: #808080'>type</span> and <span style='color: #808080'>language</span> attributes are not required
+* A script in an external file can be inserted with 
+* ```HTML
+  <script src="/PATH/myscripts.js"></script>
+  ```
+
+<br>
+<hr>
+
+# **Code structure**
+
+## **Nested comments are not supported**
+
+Such code will die with an error
+```Javascript
+/*
+  /* nested comment ?!? */
+*/
+alert( 'World' );
+```
+
+
+<br>
+<hr>
+
+# **"use strict"**
+
+After the ECMAScript 5 (ES5), new features are added and modified to the language. 
+
+So, to keep the old code working, gotta explicitly enable them with a special directive - 하위 호환성 문제
+
