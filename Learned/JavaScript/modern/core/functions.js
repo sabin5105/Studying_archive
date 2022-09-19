@@ -1,4 +1,10 @@
 //-------------------- callback function --------------------//
+```
+  callback function?
+  - 함수의 인자로 함수를 전달하는 것
+  - 함수의 인자로 전달된 함수를 callback function이라고 한다.
+```
+
 function ask(question, yes, no) {
     if (confirm(question)) yes()
     else no();
@@ -14,7 +20,6 @@ function ask(question, yes, no) {
   
   // 사용법: 함수 showOk와 showCancel가 ask 함수의 인수로 전달됨
   ask("동의하십니까?", showOk, showCancel);
-
 
 //-------------------- arrow function ----------------------//
 
